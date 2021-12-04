@@ -45,8 +45,9 @@ function createEachItem(item) {
 
 
 function createAndAppendResult(searchResult) {
+    searchResults.innerHTML = "";
     for (let item of searchResult) {
-        console.log(item);
+        //console.log(item);
         createEachItem(item);
     }
 }
@@ -80,7 +81,9 @@ function wikiSearch(searchValue) {
 
 function onKeyDown(e) {
     if (e.key === "Enter") {
-        wikiSearch(searchInputEl.value);
+        let updatedSearchInputEl = document.getElementById('searchInput');
+        wikiSearch(updatedSearchInputEl.value);
+        //console.log(updatedSearchInputEl.value);
     }
 }
 
